@@ -8,7 +8,12 @@
     <section class="todo-list" *ngIf="todos.length">
         <!-- Используем структурную директиву ngFor, чтобы создать для каждого элемента массива todos div и  
             объявить локальную переменную todo для каждого элемента массива по порядку -->
-        <div class="todo-item" *ngFor="let todo of todos">
+            <!-- Атрибутные директивы нужны для изменения внешнего вида/поведения DOM-элементов.
+                Они не создают и не удаляют DOM-элементы.
+                ngClass в зависимости от условия добавляет/удаляет класс у DOM-элемента.
+                В кач-ве значения указывается объект,ту которого н.определить св-во (оно будет названием класса), 
+                а в качестве значения для этого св-ва указ-ся true/false. А в задаче будем хранить её статус. -->
+        <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ 'completed': false }">
             <button class="checkbox icon">
                 <i class="material-icons">check_box_outline_blank</i>  
             </button>
