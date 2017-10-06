@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
 
 const todos = [
-    'Изучить Angular 2 и CLI',
-    'Прочитать документацию по изменениям Angular 4',
-    'Переписать проект Keksobooking с native js на Angular'
+    {
+        title: 'Изучить Angular 2 и CLI',
+        completed: true
+    },
+    {
+        title: 'Прочитать документацию по изменениям Angular 4',
+        completed: false
+    },
+    {
+        title: 'Переписать проект Keksobooking с native js на Angular',
+        completed: false
+    }    
 ];
 
 @Component({
