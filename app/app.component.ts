@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
 
-const todos = [
+// интерфейс - контракт/договор, описывающий, какие св-ва и методы должен иметь класс
+// перед названием интерфейса принято указывать букву I, чтобы явно указать, что это интерфейс, а не класс, например
+interface ITodo {
+    title: string;
+    completed: boolean;
+}
+// Ещё одним способом определения типа объекта является Класс. 
+// На основе Класса, в отличие от Интерфейса, мы можем создать объект (интерфейс просто описывает)
+
+const todos: ITodo[] = [
     {
         title: 'Изучить Angular 2 и CLI',
         completed: true
@@ -22,14 +31,14 @@ const todos = [
     styleUrls: ['./app/app.component.css']
 })
 export class AppComponent {
-    title = 'Angular 2 ToDo';
-    todos = todos;
+    title: string = 'Angular 2 ToDo';
+    todos: ITodo[] = todos;
 
-    completeToggle(todo: any) {
+    completeToggle(todo: ITodo) {
        todo.completed = !todo.completed; 
     }
 
-    deleteTodo(todo: any) {
+    deleteTodo(todo: ITodo) {
         let index = this.todos.indexOf(todo);
 
         if(index > -1) {
