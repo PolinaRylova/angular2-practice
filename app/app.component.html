@@ -4,23 +4,16 @@
     <h1>{{ title }}</h1>
 </header>
 <main>
-    <section class="todo-list">
-        <div class="todo-item">
+    <!-- Используем структурную директиву ngIf для отображения блока шаблона при условии наличия элементов todos -->
+    <section class="todo-list" *ngIf="todos.length">
+        <!-- Используем структурную директиву ngFor, чтобы создать для каждого элемента массива todos div и  
+            объявить локальную переменную todo для каждого элемента массива по порядку -->
+        <div class="todo-item" *ngFor="let todo of todos">
             <button class="checkbox icon">
                 <i class="material-icons">check_box_outline_blank</i>  
             </button>
-            <span class="title">Изучить Angular 2 по CodeDojo и metanit.com</span>
-            <div class="actions">
-                <button class="delete icon">
-                    <i class="material-icons">delete</i>
-                </button>
-            </div>
-        </div>
-        <div class="todo-item">
-            <button class="checkbox icon">
-                <i class="material-icons">check_box_outline_blank</i>  
-            </button>
-            <span class="title">Пройти туториал Tour of Heroes</span>
+            <!-- Используем локальную переменную todo в шаблоне -->
+            <span class="title">{{ todo }}</span>
             <div class="actions">
                 <button class="delete icon">
                     <i class="material-icons">delete</i>
