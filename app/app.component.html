@@ -15,7 +15,8 @@
                 а в качестве значения для этого св-ва указ-ся true/false. А в задаче будем хранить её статус. -->
         <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ 'completed': todo.completed }">
             <button class="checkbox icon">
-                <i class="material-icons">check_box_outline_blank</i>  
+                <i *ngIf="!todo.completed" class="material-icons">check_box_outline_blank</i>
+                <i *ngIf="todo.completed" class="material-icons">check_box</i> 
             </button>
             <!-- Используем локальную переменную todo в шаблоне -->
             <span class="title">{{ todo.title }}</span>
