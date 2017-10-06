@@ -24,12 +24,11 @@
                 <!-- <i class="material-icons" [innerText]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
                 <!-- А также м.использовать интерполяцию -->
                 <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
-                
             </button>
             <!-- Используем локальную переменную todo в шаблоне -->
             <span class="title">{{ todo.title }}</span>
             <div class="actions">
-                <button class="delete icon">
+                <button class="delete icon" (click)="deleteTodo(todo)">
                     <i class="material-icons">delete</i>
                 </button>
             </div>
