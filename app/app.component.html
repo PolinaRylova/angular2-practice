@@ -4,6 +4,10 @@
     <h1>{{ title }}</h1>
 </header>
 <main>
+    <form class="todo-form" (submit)="create($event, titleInput.value)">
+        <input type="text" placeholder="Введите название задачи" #titleInput>
+        <button type="submit">Добавить</button>
+    </form>
     <!-- Используем структурную директиву ngIf для отображения блока шаблона при условии наличия элементов todos -->
     <section class="todo-list" *ngIf="todos.length">
         <!-- Используем структурную директиву ngFor, чтобы создать для каждого элемента массива todos div и  
