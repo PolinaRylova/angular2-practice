@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Todo } from '../shared/todo';
 
@@ -10,4 +10,15 @@ import { Todo } from '../shared/todo';
 export class TodoItemComponent {
     // укажем Angular с помощью декоратора, что данный компонент принимает свойство
     @Input() todo: Todo;
+    // укажем, что данный экземпляр класса EventEmitter является выходными данными 
+    // (служит для генерации событий и предоставляет интерфейс для подписки на эти события) 
+    @Output() delete = new EventEmitter();
+
+    completeToggle() {
+        this.todo.completed = !this.todo.completed; 
+     }
+
+    deleteTodo() {
+        this.delete.emit();
+    }
 }

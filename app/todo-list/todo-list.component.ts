@@ -10,12 +10,9 @@ import { todos } from '../shared/data';
 })
 export class TodoListComponent {
     todos: Todo[] = todos;
-
-    completeToggle(todo: Todo) {
-        todo.completed = !todo.completed; 
-     }
  
      deleteTodo(todo: Todo) {
+         console.log('deleteTodo');
          let index = this.todos.indexOf(todo);
  
          if(index > -1) {

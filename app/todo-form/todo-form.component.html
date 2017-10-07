@@ -1,6 +1,4 @@
-<!-- После события submit вызовем метод create, а затем, сохранив в локальной переменной объект формы, вызовем сброс полей формы -->
 <form class="todo-form" (ngSubmit)="create(); todoForm.reset()" #todoForm="ngForm">
-    <!-- применим двустороннюю привязку ngModel поля и свойства newTodoTitle класса -->
     <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Введите название задачи" required>
     <button type="submit" [disabled]="todoForm.form.invalid">Добавить</button>
 </form>

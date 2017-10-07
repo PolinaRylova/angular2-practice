@@ -1,6 +1,3 @@
-<!-- Используем структурную директиву ngIf для отображения блока шаблона при условии наличия элементов todos -->
 <div class="todo-list" *ngIf="todos.length">
-    <!-- Используем структурную директиву ngFor, чтобы создать для каждого элемента массива todos div и  
-        объявить локальную переменную todo для каждого элемента массива по порядку -->
-    <todo-item *ngFor="let todo of todos" [todo]="todo"></todo-item>
+    <todo-item *ngFor="let todo of todos" [todo]="todo" (delete)="deleteTodo(todo)"></todo-item>
 </div>
