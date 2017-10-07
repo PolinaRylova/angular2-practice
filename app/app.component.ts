@@ -38,16 +38,6 @@ const todos: Todo[] = [
 export class AppComponent {
     title: string = 'Angular 2 ToDo';
     todos: Todo[] = todos;
-    newTodoTitle: string = '';
-
-    create() {
-        console.log('После ввода в поле текста, благодаря двусторонней привязке данных, свойству newTodoTitle класса присваивается значение ' + this.newTodoTitle);
-        // Передаём конструктору значение, введенное в поле, а оно равно значению newTodoTitle
-        let todo: Todo = new Todo(this.newTodoTitle);
-        this.todos.push(todo);
-        // после того, как задача добавлена в массив, мы обнуляем наше свойство newTodoTitle
-        this.newTodoTitle = '';
-    };
 
     completeToggle(todo: Todo) {
        todo.completed = !todo.completed; 
