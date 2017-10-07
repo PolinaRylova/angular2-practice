@@ -8,7 +8,7 @@
     <form class="todo-form" (ngSubmit)="create(); todoForm.reset()" #todoForm="ngForm">
         <!-- применим двустороннюю привязку ngModel поля и свойства newTodoTitle класса -->
         <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Введите название задачи" required>
-        <button type="submit">Добавить</button>
+        <button type="submit" [disabled]="todoForm.form.invalid">Добавить</button>
     </form>
     <!-- Используем структурную директиву ngIf для отображения блока шаблона при условии наличия элементов todos -->
     <section class="todo-list" *ngIf="todos.length">
