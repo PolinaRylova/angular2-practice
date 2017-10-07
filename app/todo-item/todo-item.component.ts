@@ -13,12 +13,13 @@ export class TodoItemComponent {
     // укажем, что данный экземпляр класса EventEmitter является выходными данными 
     // (служит для генерации событий и предоставляет интерфейс для подписки на эти события) 
     @Output() delete = new EventEmitter();
+    @Output() toggle = new EventEmitter();
 
-    completeToggle() {
-        this.todo.completed = !this.todo.completed; 
-     }
+    onToggle() {
+        this.toggle.emit(this.todo);  
+    }
 
-    deleteTodo() {
-        this.delete.emit();
+    onDelete() {
+        this.delete.emit(this.todo);
     }
 }
