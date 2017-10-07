@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Todo } from '../shared/todo';
 
@@ -8,5 +8,6 @@ import { Todo } from '../shared/todo';
     styleUrls: ['./app/todo-item/todo-item.component.css']
 })
 export class TodoItemComponent {
-    todo: Todo = new Todo('asdf');
+    // укажем Angular с помощью декоратора, что данный компонент принимает свойство
+    @Input() todo: Todo;
 }

@@ -2,5 +2,5 @@
 <div class="todo-list" *ngIf="todos.length">
     <!-- Используем структурную директиву ngFor, чтобы создать для каждого элемента массива todos div и  
         объявить локальную переменную todo для каждого элемента массива по порядку -->
-    <todo-item *ngFor="let todo of todos"></todo-item>
+    <todo-item *ngFor="let todo of todos" [todo]="todo"></todo-item>
 </div>
