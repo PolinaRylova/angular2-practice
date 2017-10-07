@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Todo } from '../shared/todo';
-import { todos } from '../shared/data';
 
 @Component({
     selector: 'todo-list',
@@ -9,7 +8,7 @@ import { todos } from '../shared/data';
     styleUrls: ['./app/todo-list/todo-list.component.css']
 })
 export class TodoListComponent {
-    todos: Todo[] = todos;
+    @Input() todos: Todo[];
  
      deleteTodo(todo: Todo) {
          console.log('deleteTodo');
