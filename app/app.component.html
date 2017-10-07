@@ -4,8 +4,8 @@
     <h1>{{ title }}</h1>
 </header>
 <main>
-    <form class="todo-form" (submit)="create($event, titleInput.value)">
-        <input type="text" placeholder="Введите название задачи" #titleInput>
+    <form class="todo-form" (ngSubmit)="create()">
+        <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Введите название задачи" required>
         <button type="submit">Добавить</button>
     </form>
     <!-- Используем структурную директиву ngIf для отображения блока шаблона при условии наличия элементов todos -->
