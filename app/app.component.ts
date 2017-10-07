@@ -14,5 +14,6 @@ export class AppComponent {
 
     create(title: string) {
         const todo = new Todo(title);
+        this.todos.push(todo);
     }
 }

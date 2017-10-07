@@ -11,7 +11,6 @@ export class TodoListComponent {
     @Input() todos: Todo[];
  
      deleteTodo(todo: Todo) {
-         console.log('deleteTodo');
          let index = this.todos.indexOf(todo);
  
          if(index > -1) {
