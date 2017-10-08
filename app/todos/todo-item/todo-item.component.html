@@ -3,8 +3,8 @@
         <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
     </button>
     <span class="title">{{ todo.title }}</span>
-    <div class="actions" (click)="onDelete()">
-        <button class="delete icon">
+    <div class="actions">
+        <button class="delete icon" (click)="onDelete()">
             <i class="material-icons">delete</i>
         </button>
     </div>
